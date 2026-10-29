@@ -1,16 +1,25 @@
 
 import { test, expect } from '../fixtures/testSetup.js';
 import LoginPage from '../pages/LoginPage';
-import testData from '../testData/testData.json';
 import { APP_URLS, getLoginCredentials } from '../utilities/config.js';
 import { attachStepScreenshot } from '../utilities/screenshot.js';
+
+const invalidLoginScenarios = [
+  {
+    name: 'unknown credentials',
+    username: 'invalid-user',
+    password: 'invalid-password',
+  },
+  { name: 'missing username', username: '', password: 'invalid-password' },
+  { name: 'missing password', username: 'invalid-user', password: '' },
+  { name: 'both fields empty', username: '', password: '' },
+];
 
 test.describe('Login Page Tests', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
   const validUsers = [
     { ...getLoginCredentials(), ExpectedMsg: 'Welcome to Adactin Group of Hotels' },
-    ...testData.validUsers,
   ];
 
   for (const user of validUsers) {
@@ -34,7 +43,7 @@ test.describe('Login Page Tests', () => {
     });
   }
 
-  for (const scenario of testData.invalidLoginScenarios) {
+  for (const scenario of invalidLoginScenarios) {
     test(`Reject login - ${scenario.name}`, async ({ page }) => {
       const loginPage = new LoginPage(page);
 

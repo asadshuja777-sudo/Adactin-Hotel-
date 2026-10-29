@@ -8,6 +8,8 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      APP_URL: https://adactinhotelapp.com/
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -20,7 +22,6 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test
       env:
-        APP_URL: https://adactinhotelapp.com/
         APP_USERNAME: ${{ secrets.APP_USERNAME }}
         APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
     - uses: actions/upload-artifact@v4

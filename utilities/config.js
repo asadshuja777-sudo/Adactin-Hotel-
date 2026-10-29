@@ -5,7 +5,7 @@ const configuredAppUrl = process.env.APP_URL;
 
 if (!configuredAppUrl) {
   throw new Error(
-    'APP_URL is required. Set it in .env or configure it as an environment variable in Jenkins.'
+    'APP_URL is required. Set it in .env or configure it as an environment variable in your CI environment.'
   );
 }
 
