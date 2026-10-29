@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 set -euo pipefail
 
 : "${APP_URL:?Set APP_URL in the Jenkins job environment.}"
