@@ -1,0 +1,41 @@
+
+{
+  "validUsers": 
+  [
+    {
+        "username": "alinewtester",
+      "password": "KD57L6"
+    },
+    {
+        "username": "Abdullahh",
+      "password": "3TT83E"
+    }
+  ],
+  "invalidLoginScenarios": [
+    {
+      "name": "unknown username",
+      "username": "not_a_real_user_2026",
+      "password": "InvalidPassword123!"
+    },
+    {
+      "name": "incorrect password",
+      "username": "alinewtester",
+      "password": "DefinitelyWrong123!"
+    },
+    {
+      "name": "missing username",
+      "username": "",
+      "password": "InvalidPassword123!"
+    },
+    {
+      "name": "missing password",
+      "username": "not_a_real_user_2026",
+      "password": ""
+    },
+    {
+      "name": "both fields empty",
+      "username": "",
+      "password": ""
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "scenarios": [
+    {
+      "name": "Standard test booking",
+      "details": {
+        "firstName": "Test",
+        "lastName": "Guest",
+        "address": "123 Test Street",
+        "creditCardNumber": "4111111111111111",
+        "creditCardType": "VISA",
+        "expiryMonth": "9",
+        "expiryYear": "2028",
+        "cvv": "123"
+      }
+    },
+    {
+      "name": "Alternate test booking",
+      "details": {
+        "firstName": "Alex",
+        "lastName": "Traveler",
+        "address": "456 Sample Avenue",
+        "creditCardNumber": "5555555555554444",
+        "creditCardType": "Master Card",
+        "expiryMonth": "10",
+        "expiryYear": "2029",
+        "cvv": "456"
+      }
+    }
+  ]
+}

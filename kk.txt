@@ -1,0 +1,11 @@
+$env:APP_USERNAME = "your-username"
+$env:APP_PASSWORD = "your-password"
+npx playwright test --project=chromium
+
+
+
+
+
+
+
+

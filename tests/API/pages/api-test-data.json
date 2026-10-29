@@ -1,0 +1,67 @@
+{
+  "API_BASE_URL": "https://api-testing-postman.vercel.app/api/v1",
+  "STATUS": {
+    "OK": 200,
+    "CREATED": 201,
+    "BAD_REQUEST": 400,
+    "UNAUTHORIZED": 401,
+    "NOT_FOUND": 404,
+    "CONFLICT": 409,
+    "METHOD_NOT_ALLOWED": 405
+  },
+  "API_ENDPOINTS": {
+    "allUsers": "/all-users",
+    "login": "/login"
+  },
+  "TEST_REQUESTS": {
+    "emptyBody": null,
+    "emptyPassword": "",
+    "unsupportedMethod": {
+      "name": "Test User"
+    },
+    "invalidAuthorizationHeader": {
+      "headers": {
+        "Authorization": "******"
+      }
+    }
+  },
+  "TEST_USER": {
+    "password": "Password123!",
+    "wrongPassword": "WrongPassword999!",
+    "missingPasswordRegistration": {
+      "fullname": "imran112",
+      "email": "imran_missing@example.com",
+      "username": "imran_missing"
+    },
+    "invalidEmailRegistration": {
+      "fullname": "imran112",
+      "email": "invalid-email-format",
+      "username": "imran_email_test",
+      "password": "Password123!"
+    },
+    "loginMissingPassword": {
+      "email": "haristester@example.com",
+      "username": "haristester"
+    },
+    "unauthenticatedReplaceAccount": {
+      "fullname": "Updated User",
+      "email": "updateduser@example.com",
+      "username": "updatedUser"
+    },
+    "incompleteReplaceAccount": {
+      "email": "incomplete@example.com",
+      "username": "incompleteUser"
+    },
+    "unauthenticatedPatchAccount": {
+      "fullname": "Updated User",
+      "email": "updateduser@example.com"
+    }
+  },
+  "INVALID_ENDPOINTS": {
+    "getAllUsers": "/invalid-endpoint",
+    "getAllUsersAlternative": "/invalid-endpoint-999",
+    "login": "/invalid-login",
+    "replaceAccount": "/invalid-replace-endpoint",
+    "deleteAccount": "/invalid-delete-endpoint"
+  }
+}

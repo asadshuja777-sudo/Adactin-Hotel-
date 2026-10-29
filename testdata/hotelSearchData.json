@@ -1,0 +1,30 @@
+{
+  "scenarios": [
+    {
+      "name": "Sydney standard room",
+      "details": {
+        "location": "Sydney",
+        "hotel": "Hotel Creek",
+        "roomType": "Standard",
+        "rooms": "1",
+        "checkIn": "10/11/2026",
+        "checkOut": "12/11/2026",
+        "adults": "2",
+        "children": "0"
+      }
+    },
+    {
+      "name": "Melbourne deluxe room",
+      "details": {
+        "location": "Melbourne",
+        "hotel": "Hotel Sunshine",
+        "roomType": "Deluxe",
+        "rooms": "2",
+        "checkIn": "15/11/2026",
+        "checkOut": "18/11/2026",
+        "adults": "2",
+        "children": "1"
+      }
+    }
+  ]
+}
