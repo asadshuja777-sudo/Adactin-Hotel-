@@ -1,7 +1,13 @@
 
 import 'dotenv/config';
 
-const configuredAppUrl = process.env.APP_URL ;
+const configuredAppUrl = process.env.APP_URL;
+
+if (!configuredAppUrl) {
+  throw new Error(
+    'APP_URL is required. Set it in .env or configure it as an environment variable in Jenkins.'
+  );
+}
 
 export const APP_URL = `${configuredAppUrl.replace(/\/+$/, '')}/`;
 
