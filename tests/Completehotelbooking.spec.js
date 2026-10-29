@@ -7,6 +7,9 @@ import BookHotelPage from '../pages/BookHotelPage.js';
 import BookingConfirmationPage from '../pages/BookingConfirmationPage.js';
 import searchData from '../testdata/hotelSearchData.json';
 import bookingData from '../testdata/bookingDetailsData.json';
+import { hasLoginCredentials } from '../utilities/config.js';
+
+test.skip(!hasLoginCredentials(), 'Set APP_USERNAME and APP_PASSWORD to run authenticated tests.');
 
 for (const searchScenario of searchData.scenarios) {
   for (const bookingScenario of bookingData.scenarios) {

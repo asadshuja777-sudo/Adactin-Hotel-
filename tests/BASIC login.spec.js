@@ -1,7 +1,7 @@
 
 import { test, expect } from '../fixtures/testSetup.js';
 import LoginPage from '../pages/LoginPage';
-import { APP_URLS, getLoginCredentials } from '../utilities/config.js';
+import { APP_URLS, getLoginCredentials, hasLoginCredentials } from '../utilities/config.js';
 import { attachStepScreenshot } from '../utilities/screenshot.js';
 
 const invalidLoginScenarios = [
@@ -18,13 +18,10 @@ const invalidLoginScenarios = [
 test.describe('Login Page Tests', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
-  const validUsers = [
-    { ...getLoginCredentials(), ExpectedMsg: 'Welcome to Adactin Group of Hotels' },
-  ];
-
-  for (const user of validUsers) {
-    test(`Login with ${user.username}`, async ({ page }) => {
+  if (hasLoginCredentials()) {
+    test('Login with valid credentials', async ({ page }) => {
       const loginPage = new LoginPage(page);
+      const user = { ...getLoginCredentials(), ExpectedMsg: 'Welcome to Adactin Group of Hotels' };
 
       await loginPage.gotoURL();
       await loginPage.login(user);

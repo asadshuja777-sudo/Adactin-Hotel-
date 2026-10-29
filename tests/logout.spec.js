@@ -1,10 +1,11 @@
 import { test, expect } from '../fixtures/testSetup.js';
 import LoginPage from '../pages/LoginPage.js';
 import LogoutPage from '../pages/LogoutPage.js';
-import { APP_URLS, getLoginCredentials } from '../utilities/config.js';
+import { APP_URLS, getLoginCredentials, hasLoginCredentials } from '../utilities/config.js';
 import { attachStepScreenshot } from '../utilities/screenshot.js';
 
 test.describe('Logout Page Tests', () => {
+  test.skip(!hasLoginCredentials(), 'Set APP_USERNAME and APP_PASSWORD to run authenticated tests.');
   test.use({ storageState: { cookies: [], origins: [] } });
 
   test('Successfully log out the user', async ({ page }) => {

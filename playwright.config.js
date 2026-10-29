@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+import { hasLoginCredentials } from './utilities/config.js';
 
 /**
  * Read environment variables from file.
@@ -48,7 +49,7 @@ export default defineConfig({
             //testIgnore: '**/BASIC login.spec.js',
             use: {
                 ...devices['Desktop Chrome'],
-                storageState: 'playwright/.auth/user.json'
+                ...(hasLoginCredentials() && { storageState: 'playwright/.auth/user.json' })
             }
         },
 
@@ -58,7 +59,7 @@ export default defineConfig({
             testIgnore: '**/BASIC login.spec.js',
             use: {
                 ...devices['Desktop Firefox'],
-                storageState: 'playwright/.auth/user.json'
+                ...(hasLoginCredentials() && { storageState: 'playwright/.auth/user.json' })
             }
         },
 
@@ -68,7 +69,7 @@ export default defineConfig({
             testIgnore: '**/BASIC login.spec.js',
             use: {
                 ...devices['Desktop Safari'],
-                storageState: 'playwright/.auth/user.json'
+                ...(hasLoginCredentials() && { storageState: 'playwright/.auth/user.json' })
             }
         }
     ]
@@ -100,4 +101,3 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-
