@@ -1,7 +1,7 @@
 
 import { test, expect } from '../fixtures/testSetup.js';
 import LoginPage from '../pages/LoginPage';
-import testData from '../testData/testData.json';
+import testData from '../testData.json/testData.json';
 const { APP_URLS, getLoginCredentials } = require('../utilities/config.js');
 import { attachStepScreenshot } from '../utilities/screenshot.js';
 

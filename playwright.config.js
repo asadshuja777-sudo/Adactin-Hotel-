@@ -46,7 +46,7 @@ module.exports = defineConfig({
         {
             name: 'chromium',
             dependencies: ['setup'],
-            //testIgnore: '**/BASIC login.spec.js',
+            testIgnore: '**/BASIC login.spec.js',
             use: {
                 ...devices['Desktop Chrome'],
                 ...(hasLoginCredentials() && { storageState: 'playwright/.auth/user.json' })

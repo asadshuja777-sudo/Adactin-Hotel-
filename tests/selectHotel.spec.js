@@ -2,7 +2,7 @@
 import { test, expect } from '../fixtures/testSetup.js';
 import SearchHotelPage from '../pages/SearchHotelPage';
 import SelectHotelPage from '../pages/SelectHotelPage';
-import searchData from '../testData/hotelSearchData.json';
+import searchData from '../testData.json/hotelSearchData.json';
 const { APP_URLS } = require('../utilities/config.js');
 import { attachStepScreenshot } from '../utilities/screenshot.js';
 
