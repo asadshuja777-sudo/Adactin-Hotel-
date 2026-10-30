@@ -7,7 +7,7 @@ import searchData from '../testData.json/hotelSearchData.json';
 import bookingData from '../testData.json/bookingDetailsData.json';
 const { APP_URLS } = require('../utilities/config.js');
 import { attachStepScreenshot } from '../utilities/screenshot.js';
-
+//test
 test.describe('Booking Confirmation Page Tests', () => {
 
 
