@@ -3,8 +3,8 @@ import SearchHotelPage from '../pages/SearchHotelPage.js';
 import SelectHotelPage from '../pages/SelectHotelPage.js';
 import BookHotelPage from '../pages/BookHotelPage.js';
 import BookingConfirmationPage from '../pages/BookingConfirmationPage.js';
-import searchData from '../testdata/hotelSearchData.json';
-import bookingData from '../testdata/bookingDetailsData.json';
+import searchData from '../testData/hotelSearchData.json';
+import bookingData from '../testData/bookingDetailsData.json';
 const { APP_URLS } = require('../utilities/config.js');
 import { attachStepScreenshot } from '../utilities/screenshot.js';
 
