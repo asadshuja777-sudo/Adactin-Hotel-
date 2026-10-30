@@ -1,13 +1,7 @@
 
 import 'dotenv/config';
 
-const configuredAppUrl = process.env.APP_URL;
-
-if (!configuredAppUrl) {
-  throw new Error(
-    'APP_URL is required. Set it in .env or configure it as an environment variable in your CI environment.'
-  );
-}
+const configuredAppUrl = process.env.APP_URL ;
 
 export const APP_URL = `${configuredAppUrl.replace(/\/+$/, '')}/`;
 
@@ -27,25 +21,13 @@ export const APP_URLS = Object.freeze({
   bookedItinerary: new URL(APP_PATHS.bookedItinerary, APP_URL).href,
 });
 
-export function hasLoginCredentials() {
-  const hasCredentials = Boolean(process.env.APP_USERNAME && process.env.APP_PASSWORD);
-
-  if (!hasCredentials && process.env.CI) {
-    throw new Error(
-      'CI test runs require APP_USERNAME and APP_PASSWORD. Bind Jenkins credentials to these environment variables.'
-    );
-  }
-
-  return hasCredentials;
-}
-
 export function getLoginCredentials() {
   const username = process.env.APP_USERNAME;
   const password = process.env.APP_PASSWORD;
 
   if (!username || !password) {
     throw new Error(
-      'Authenticated tests require APP_USERNAME and APP_PASSWORD environment variables.'
+      'Set APP_USERNAME and APP_PASSWORD in .env or as environment variables before running authenticated tests.'
     );
   }
 

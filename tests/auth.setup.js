@@ -1,10 +1,9 @@
 import { test, expect } from '@playwright/test';
 import LoginPage from '../pages/LoginPage.js';
-import { getLoginCredentials, hasLoginCredentials } from '../utilities/config.js';
+import { getLoginCredentials } from '../utilities/config.js';
 import fs from 'fs';
 
 test('Login and save session', async ({ page }) => {
-    test.skip(!hasLoginCredentials(), 'Set APP_USERNAME and APP_PASSWORD to run authenticated tests.');
 
     const login = new LoginPage(page);
 

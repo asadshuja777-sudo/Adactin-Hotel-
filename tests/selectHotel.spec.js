@@ -3,11 +3,10 @@ import { test, expect } from '../fixtures/testSetup.js';
 import SearchHotelPage from '../pages/SearchHotelPage';
 import SelectHotelPage from '../pages/SelectHotelPage';
 import searchData from '../testdata/hotelSearchData.json';
-import { APP_URLS, hasLoginCredentials } from '../utilities/config.js';
+import { APP_URLS } from '../utilities/config.js';
 import { attachStepScreenshot } from '../utilities/screenshot.js';
 
 test.describe('Select Hotel Page Tests', () => {
-  test.skip(!hasLoginCredentials(), 'Set APP_USERNAME and APP_PASSWORD to run authenticated tests.');
 
   for (const scenario of searchData.scenarios) {
     test(`Select first hotel - ${scenario.name}`, async ({ page }) => {

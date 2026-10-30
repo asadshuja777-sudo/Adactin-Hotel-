@@ -5,10 +5,8 @@ import BookHotelPage from '../pages/BookHotelPage.js';
 import BookingConfirmationPage from '../pages/BookingConfirmationPage.js';
 import searchData from '../testdata/hotelSearchData.json';
 import bookingData from '../testdata/bookingDetailsData.json';
-import { APP_URLS, hasLoginCredentials } from '../utilities/config.js';
+import { APP_URLS } from '../utilities/config.js';
 import { attachStepScreenshot } from '../utilities/screenshot.js';
-
-test.skip(!hasLoginCredentials(), 'Set APP_USERNAME and APP_PASSWORD to run authenticated tests.');
 
 test.describe('Booking Confirmation Page Tests', () => {
 
