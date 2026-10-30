@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import LoginPage from '../pages/LoginPage.js';
-import { getLoginCredentials } from '../utilities/config.js';
+const { getLoginCredentials } = require('../utilities/config.js');
 import fs from 'fs';
 
 test('Login and save session', async ({ page }) => {

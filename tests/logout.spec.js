@@ -1,7 +1,7 @@
 import { test, expect } from '../fixtures/testSetup.js';
 import LoginPage from '../pages/LoginPage.js';
 import LogoutPage from '../pages/LogoutPage.js';
-import { APP_URLS, getLoginCredentials } from '../utilities/config.js';
+const { APP_URLS, getLoginCredentials } = require('../utilities/config.js');
 import { attachStepScreenshot } from '../utilities/screenshot.js';
 
 test.describe('Logout Page Tests', () => {

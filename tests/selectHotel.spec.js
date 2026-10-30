@@ -3,7 +3,7 @@ import { test, expect } from '../fixtures/testSetup.js';
 import SearchHotelPage from '../pages/SearchHotelPage';
 import SelectHotelPage from '../pages/SelectHotelPage';
 import searchData from '../testdata/hotelSearchData.json';
-import { APP_URLS } from '../utilities/config.js';
+const { APP_URLS } = require('../utilities/config.js');
 import { attachStepScreenshot } from '../utilities/screenshot.js';
 
 test.describe('Select Hotel Page Tests', () => {

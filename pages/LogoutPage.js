@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
 import { attachStepScreenshot } from '../utilities/screenshot.js';
-import { APP_PATHS } from '../utilities/config.js';
+const { APP_PATHS } = require('../utilities/config.js');
 
 class LogoutPage {
   constructor(page) {

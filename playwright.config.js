@@ -1,6 +1,6 @@
 // @ts-check
-import { defineConfig, devices } from '@playwright/test';
-import { hasLoginCredentials } from './utilities/config.js';
+const { defineConfig, devices } = require('@playwright/test');
+const { hasLoginCredentials } = require('./utilities/config.js');
 
 /**
  * Read environment variables from file.
@@ -13,7 +13,7 @@ import { hasLoginCredentials } from './utilities/config.js';
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-export default defineConfig({
+module.exports = defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,

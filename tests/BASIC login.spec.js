@@ -2,7 +2,7 @@
 import { test, expect } from '../fixtures/testSetup.js';
 import LoginPage from '../pages/LoginPage';
 import testData from '../testData/testData.json';
-import { APP_URLS, getLoginCredentials } from '../utilities/config.js';
+const { APP_URLS, getLoginCredentials } = require('../utilities/config.js');
 import { attachStepScreenshot } from '../utilities/screenshot.js';
 
 test.describe('Login Page Tests', () => {
@@ -13,8 +13,8 @@ test.describe('Login Page Tests', () => {
     ...testData.validUsers,
   ];
 
-  for (const user of validUsers) {
-    test(`Login with ${user.username}`, async ({ page }) => {
+  for (const [index, user] of validUsers.entries()) {
+    test(`Login with ${user.username} (case ${index + 1})`, async ({ page }) => {
       const loginPage = new LoginPage(page);
 
       await loginPage.gotoURL();

@@ -1,7 +1,7 @@
 import { test as base, expect } from '@playwright/test';
 import BasePage from '../pages/BasePage.js';
 import { attachScreenshotAfterEach } from '../utilities/screenshot.js';
-import { APP_URL } from '../utilities/config.js';
+const { APP_URL } = require('../utilities/config.js');
 let hookPage;
 
 

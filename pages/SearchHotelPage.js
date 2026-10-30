@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
 import { attachStepScreenshot } from '../utilities/screenshot.js';
-import { APP_URLS } from '../utilities/config.js';
+const { APP_URLS } = require('../utilities/config.js');
 
 class SearchHotelPage {
   constructor(page) {

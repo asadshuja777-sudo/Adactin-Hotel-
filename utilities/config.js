@@ -1,11 +1,11 @@
 
-import 'dotenv/config';
+require('dotenv').config();
 
-const configuredAppUrl = process.env.APP_URL ;
+const configuredAppUrl = process.env.APP_URL || 'https://adactinhotelapp.com';
 
-export const APP_URL = `${configuredAppUrl.replace(/\/+$/, '')}/`;
+const APP_URL = `${configuredAppUrl.replace(/\/+$/, '')}/`;
 
-export const APP_PATHS = Object.freeze({
+const APP_PATHS = Object.freeze({
   login: 'index.php',
   searchHotel: 'SearchHotel.php',
   logout: 'Logout.php',
@@ -13,7 +13,7 @@ export const APP_PATHS = Object.freeze({
   bookedItinerary: 'BookedItinerary.php',
 });
 
-export const APP_URLS = Object.freeze({
+const APP_URLS = Object.freeze({
   login: APP_URL,
   searchHotel: new URL(APP_PATHS.searchHotel, APP_URL).href,
   logout: new URL(APP_PATHS.logout, APP_URL).href,
@@ -21,11 +21,11 @@ export const APP_URLS = Object.freeze({
   bookedItinerary: new URL(APP_PATHS.bookedItinerary, APP_URL).href,
 });
 
-export function hasLoginCredentials() {
-  return !!(process.env.APP_USERNAME && process.env.APP_PASSWORD);
+function hasLoginCredentials() {
+  return Boolean(process.env.APP_USERNAME && process.env.APP_PASSWORD);
 }
 
-export function getLoginCredentials() {
+function getLoginCredentials() {
   const username = process.env.APP_USERNAME;
   const password = process.env.APP_PASSWORD;
 
@@ -37,3 +37,11 @@ export function getLoginCredentials() {
 
   return { username, password };
 }
+
+module.exports = {
+  APP_URL,
+  APP_PATHS,
+  APP_URLS,
+  hasLoginCredentials,
+  getLoginCredentials,
+};
