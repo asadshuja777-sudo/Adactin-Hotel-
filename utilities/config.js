@@ -21,6 +21,10 @@ export const APP_URLS = Object.freeze({
   bookedItinerary: new URL(APP_PATHS.bookedItinerary, APP_URL).href,
 });
 
+export function hasLoginCredentials() {
+  return !!(process.env.APP_USERNAME && process.env.APP_PASSWORD);
+}
+
 export function getLoginCredentials() {
   const username = process.env.APP_USERNAME;
   const password = process.env.APP_PASSWORD;
