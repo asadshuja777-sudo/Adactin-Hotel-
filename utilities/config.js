@@ -28,7 +28,15 @@ export const APP_URLS = Object.freeze({
 });
 
 export function hasLoginCredentials() {
-  return Boolean(process.env.APP_USERNAME && process.env.APP_PASSWORD);
+  const hasCredentials = Boolean(process.env.APP_USERNAME && process.env.APP_PASSWORD);
+
+  if (!hasCredentials && process.env.CI) {
+    throw new Error(
+      'CI test runs require APP_USERNAME and APP_PASSWORD. Bind Jenkins credentials to these environment variables.'
+    );
+  }
+
+  return hasCredentials;
 }
 
 export function getLoginCredentials() {
